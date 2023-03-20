@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form
+      method="POST"
+      action="#"
+      data-th-action="@{/contact}"
+      data-th-object="${user}"
+    >
+      Name:
+      <input type="text" placeholder="Your Name" data-th-field="*{name}" />
+      <p class="error" data-th-errors="*{name}"></p>
+      <br /><br />
+      Email:
+      <input type="email" placeholder="Your Email" data-th-field="*{email}" />
+      <p class="error" data-th-errors="*{email}"></p>
+      <br /><br />
+      Phone Number:
+      <input
+        type="tel"
+        placeholder="Your Phone Number"
+        data-th-field="*{phoneNumber}"
+      />
+      <p class="error" data-th-errors="*{phoneNumber}"></p>
+      <br /><br />
+      Date of Birth: <input type="date" data-th-field="*{dateOfBirth}" />
+      <p class="error" data-th-errors="*{dateOfBirth}"></p>
+      <p class="error" data-th-errors="*{age}"></p>
+      <br /><br />
+      <input type="hidden" data-th-field="*{id}" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
